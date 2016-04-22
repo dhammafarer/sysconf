@@ -1,0 +1,61 @@
+# commands
+alias ll="ls -la"
+alias chx="chmod +x"
+alias off="sudo shutdown -P now"
+alias restart="sudo shutdown -r now"
+
+# files
+alias zshrc="vim ~/.zshrc"
+
+# Navigation
+alias code="cd ~/Code"
+alias docs="cd ~/Documents"
+alias dsk="cd ~/Desktop"
+alias drp="cd ~/Dropbox"
+alias dwn="cd ~/Downloads"
+alias ext="cd /media/pawel/Pawel-1.5TB"
+alias scripts="cd ~/Dropbox/Scripts"
+alias backup="cd ~/Dropbox/Scripts/backup"
+alias installation="cd ~/Dropbox/Scripts/installation"
+
+# Git Stuff
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit -m"
+alias gp="git push github"
+alias gst="git status"
+alias glog="git log"
+alias nah="git reset --hard; git clean -dif;"
+
+# working files and directories
+alias otpl="cd ~/Code/otpl/"
+alias mup="mv ~/Downloads/*.mm Dropbox/MindMaps/LP/_data/14FFD4041A7KUUTU71C6C6EEYIAM32BQYK2/Sync"
+alias snip="vim ~/.janus/mysnippets/snippets/"
+
+#Laravel
+alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+alias hu="homestead up"
+alias hh="homestead halt"
+alias hs="homestead ssh"
+alias tinker="php artisan tinker"
+alias he="vim ~/.homestead/Homestead.yaml"
+
+#applications
+alias rsf="redshift -O "
+alias phpserve="php -S localhost:8000 | xdg-open http://localhost:8000"
+alias chrome="google-chrome &"
+alias ff="firefox &"
+alias xo="xdg-open"
+alias t="tree -L 2"
+alias pc="pass -c"
+alias v.="vim ."
+alias tmpw="cd /tmp; wget "
+
+#js development
+alias jake="./jake.sh"
+alias gulp="./node_modules/.bin/gulp"
+alias ni="npmInstall"
+
+#php development
+alias phpspec="./vendor/phpspec/phpspec/bin/phpspec"
+alias phpunit="./vendor/bin/phpunit"

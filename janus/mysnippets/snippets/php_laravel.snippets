@@ -1,0 +1,35 @@
+snippet form:
+	{!! Form::open() !!}
+		${1}
+	{!! Form::close() !!}
+snippet textfield
+	<div class="form-group">
+		{!! Form::label("${1}", "${2}:") !!}
+		{!! Form::text("${3}", null, ['class' => 'form-control']) !!}
+	</div>
+snippet submitfield
+	{!! Form::submit(\$submitTextButton, ['class' => 'btn btn-${1:primary} form-control']) !!}
+snippet met
+	public function ${1:name}(${2})
+	{
+		${3}
+	}
+
+#testing
+snippet @t
+	/** @test */
+	function ${1}()
+	{
+		$this->${2}
+	}
+snippet phpunit
+	<?php
+
+	class ${1} extends TestCase
+	{
+		/** @test */
+		function ${2}()
+		{
+			${3}
+		}
+	}

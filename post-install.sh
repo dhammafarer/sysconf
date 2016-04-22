@@ -13,9 +13,9 @@ sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) pa
 
 # PPA for google-chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
 # PPA for nodejs
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 
 # PPA for purple-facebook
@@ -31,7 +31,7 @@ sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
 
 # install apps
-sudo apt-get -y install $(cat development.list favorites.list utilities.list codecs.list)
+sudo apt-get -y install $(cat list/development.list list/favorites.list list/utilities.list)
 
 # Virtualbox
 sudo adduser pawel vboxusers
@@ -84,10 +84,9 @@ cp -rf pidgin-EAP-master/{.fonts,.purple} ~
 # setup dotfiles
 files="zshrc vimrc.after vimrc.before tmux.conf aliases janus"
 mkdir /home/pawel/sysconf-old
-cd /home/pawel/sysconf
-for file in files; do
+for file in $files; do
     mv /home/pawel/.$file /home/pawel/sysconf-old
-    ln -s ./$file /home/pawel/.$file
+    ln -s /home/pawel/sysconf/$file /home/pawel/.$file
 done
 
 # disable shopping suggestions
